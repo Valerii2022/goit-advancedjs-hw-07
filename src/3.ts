@@ -13,11 +13,11 @@ interface ICharacter {
   name: string;
   level: number;
   introduce(phrase: string): void;
-  castSpell(): void;
+  levelUp(): void;
 }
 
 interface ISpellCaster {
-  levelUp(): void;
+  castSpell(): void;
 }
 
 class Wizard implements ICharacter, ISpellCaster {

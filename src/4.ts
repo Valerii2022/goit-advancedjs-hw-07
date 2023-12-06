@@ -34,21 +34,20 @@ class Person implements PersonInterface {
   }
 }
 
-class House implements HouseInterface {
-  protected door: boolean;
+abstract class House implements HouseInterface {
+  protected door: boolean = false;
   protected key: Key;
   protected tenants: Person[] = [];
 
   constructor(key: Key) {
     this.key = key;
-    this.door = false;
   }
 
   comeIn(person: Person): void {
     if (this.door) this.tenants.push(person);
   }
 
-  openDoor(key: Key): void {}
+  abstract openDoor(key: Key): void;
 }
 
 class MyHouse extends House {
